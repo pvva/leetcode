@@ -40,30 +40,42 @@ func countSmaller(nums []int) []int {
 		// +1 to achieve positive numbers (min - min = 0)
 		nums[i] = v - min + 1
 	}
-	bit := make([]int, max+1)
+	bit := &binaryIndexTree{
+		bit: make(map[int]int),
+		max: max,
+	}
 	for i := len(nums) - 1; i >= 0; i-- {
 		// get all counts starting from preceding int, because of task condition
 		// it it would have been "number of smaller or equal elements", then get would be from nums[i]
-		res[i] = getBitValue(nums[i]-1, bit)
-		updateBitValue(nums[i], bit)
+		res[i] = bit.getBitValue(nums[i] - 1)
+		bit.updateBitValue(nums[i])
 	}
 
 	return res
 }
 
-func getBitValue(v int, bit []int) int {
+// use map for binary index tree instead of array to be memory efficient
+type binaryIndexTree struct {
+	bit map[int]int
+	max int
+}
+
+func (bit *binaryIndexTree) getBitValue(v int) int {
 	s := 0
 	for v > 0 {
-		s += bit[v]
+		if bv, ex := bit.bit[v]; ex {
+			s += bv
+		}
 		v -= v & (-v)
 	}
 
 	return s
 }
 
-func updateBitValue(v int, bit []int) {
-	for v < len(bit) {
-		bit[v]++
+func (bit *binaryIndexTree) updateBitValue(v int) {
+	for v < bit.max {
+		bv, _ := bit.bit[v]
+		bit.bit[v] = bv + 1
 		v += v & (-v)
 	}
 }
