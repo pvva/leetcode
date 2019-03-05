@@ -8,7 +8,7 @@ import (
 func v1(s string) bool {
 	l := len(s)
 	for i := 0; i < l>>1; i++ {
-		if s[i:i+1] != s[l-i-1:l-i] {
+		if s[i] != s[l-i-1] {
 			return false
 		}
 	}
@@ -20,7 +20,7 @@ func v2(s string) bool {
 	l := 0
 	h := len(s) - 1
 	for l < h {
-		if s[l:l+1] != s[h:h+1] {
+		if s[l] != s[h] {
 			return false
 		}
 		l++
