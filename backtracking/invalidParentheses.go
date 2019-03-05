@@ -71,7 +71,6 @@ func extract(s string, rs map[string]bool, start int, seq []byte) {
 		extract(r, rs, 0, []byte{')', '('})
 	} else {
 		rs[r] = true
-		println(r)
 	}
 }
 
