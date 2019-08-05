@@ -30,7 +30,7 @@ func main() {
 	}
 }
 
-// use brute force iteration, (n^2 - n) / 2 steps
+// use brute force iteration, n^2 - n steps
 func maxPoints(points [][]int) int {
 	l := len(points)
 	if l < 3 {
@@ -63,7 +63,6 @@ func maxPoints(points [][]int) int {
 				println("0: new max is ", maxP)
 			}
 		}
-		//s := len(sameSecondPoint) + 1
 		if samePoint > maxP {
 			maxP = samePoint
 			println("1: new max is ", maxP)
