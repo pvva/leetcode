@@ -45,7 +45,7 @@ func main() {
 		{"95a54e53", false},
 	}
 	for _, cs := range cases {
-		println(cs.number, "=>", isNumber(cs.number), "(", cs.isNumber, ")")
+		println(cs.number, "=>", isNumber(cs.number), "(expected ", cs.isNumber, ")")
 	}
 }
 
