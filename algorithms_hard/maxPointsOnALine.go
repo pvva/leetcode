@@ -60,12 +60,10 @@ func maxPoints(points [][]int) int {
 
 			if cMaxP > maxP {
 				maxP = cMaxP
-				println("0: new max is ", maxP)
 			}
 		}
 		if samePoint > maxP {
 			maxP = samePoint
-			println("1: new max is ", maxP)
 		}
 	}
 
