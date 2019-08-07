@@ -3,6 +3,8 @@ package main
 import "fmt"
 
 /*
+https://leetcode.com/problems/max-points-on-a-line
+
 Given n points on a 2D plane, find the maximum number of points that lie on the same straight line.
 Input: [[1,1],[2,2],[3,3]]
 Output: 3

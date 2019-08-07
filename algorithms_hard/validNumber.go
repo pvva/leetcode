@@ -3,6 +3,8 @@ package main
 import "strings"
 
 /*
+https://leetcode.com/problems/max-points-on-a-line
+
 Validate if a given string can be interpreted as a decimal number.
 
 Some examples:
