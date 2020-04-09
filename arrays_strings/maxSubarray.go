@@ -38,25 +38,26 @@ func maxSubArrayBF(nums []int) (int, []int) {
 	return s, nums[start : end+1]
 }
 
+// Kadane's algorithm
 func maxSubArrayLinear(nums []int) (int, []int) {
 	start := 0
 	end := 0
-	max := nums[0]
-	maxE := nums[0]
+	bestSum := nums[0]
+	currentSum := nums[0]
 
 	for i := 1; i < len(nums); i++ {
-		t := maxE + nums[i]
+		t := currentSum + nums[i]
 		if t < nums[i] {
-			maxE = nums[i]
+			currentSum = nums[i]
 			start = i
 		} else {
-			maxE = t
+			currentSum = t
 		}
-		if max < maxE {
-			max = maxE
+		if bestSum < currentSum {
+			bestSum = currentSum
 			end = i
 		}
 	}
 
-	return max, nums[start : end+1]
+	return bestSum, nums[start : end+1]
 }
