@@ -1,7 +1,5 @@
 package main
 
-import "sort"
-
 func main() {
 	//println(longestConsecutive([]int{100, 4, 200, 1, 3, 2}))
 	//println(longestConsecutive([]int{}))
@@ -17,9 +15,6 @@ func longestConsecutive(nums []int) int {
 	if len(nums) == 0 {
 		return 0
 	}
-	sort.SliceStable(nums, func(i, j int) bool {
-		return nums[i] < nums[j]
-	})
 
 	c0 := 1
 	c1 := 1
