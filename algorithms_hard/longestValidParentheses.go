@@ -52,6 +52,7 @@ func longestValidParentheses(s string) int {
 	if len(stack) == 0 {
 		return len(s)
 	}
+	stack = append(stack, len(s))
 
 	p := 0
 	c := -1
@@ -62,10 +63,6 @@ func longestValidParentheses(s string) int {
 		}
 		c = stack[0]
 		stack = stack[1:]
-	}
-	t := len(s) - c
-	if p < t-1 {
-		p = t - 1
 	}
 
 	return p
