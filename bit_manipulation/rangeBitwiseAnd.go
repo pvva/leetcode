@@ -24,7 +24,7 @@ Output: 0
 func rangeBitwiseAnd(m int, n int) int {
 	shiftCounter := 0
 
-	// shift right until both number are equal, which means that they have common prefix, which is a bases for an answer
+	// shift right until both numbers are equal, which means that they have common prefix, which is a bases for an answer
 	// to get an answer we need to shift the basis left as many times as we shifted original number to the right
 	for m != n {
 		m >>= 1
