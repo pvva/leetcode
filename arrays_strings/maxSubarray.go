@@ -6,6 +6,7 @@ func main() {
 	//fmt.Println(maxSubArrayBF([]int{4, 1, 2, 1}))
 	fmt.Println(maxSubArrayBF([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
 	fmt.Println(maxSubArrayLinear([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}))
+	fmt.Println(maxSubArrayLinear([]int{-5, 4, -5, -3, 5, -3}))
 }
 
 /*
@@ -42,10 +43,10 @@ func maxSubArrayBF(nums []int) (int, []int) {
 func maxSubArrayLinear(nums []int) (int, []int) {
 	start := 0
 	end := 0
-	bestSum := nums[0]
-	currentSum := nums[0]
+	bestSum := 0
+	currentSum := 0
 
-	for i := 1; i < len(nums); i++ {
+	for i := 0; i < len(nums); i++ {
 		t := currentSum + nums[i]
 		if t < nums[i] {
 			currentSum = nums[i]
