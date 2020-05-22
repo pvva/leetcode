@@ -1,8 +1,8 @@
 package main
 
 func main() {
-	println(ladderLength("hit", "cog", []string{"hot", "dot", "dog", "lot", "log", "cog"}))
-	println(ladderLength("hit", "cog", []string{"hot", "dot", "dog", "lot", "log"}))
+	println(ladderLength("hit", "cog", []string{"hot", "dot", "dog", "lot", "log", "cog"}), 5)
+	println(ladderLength("hit", "cog", []string{"hot", "dot", "dog", "lot", "log"}), 0)
 }
 
 /*
@@ -19,73 +19,77 @@ All words contain only lowercase alphabetic characters.
 You may assume no duplicates in the word list.
 You may assume beginWord and endWord are non-empty and are not the same.
 */
+
 func ladderLength(beginWord string, endWord string, wordList []string) int {
-	wl := make(map[string]bool)
+	counter := 1
+	fromWords := []string{beginWord}
+	found := false
+
+	wordsMap := make(map[string]bool)
 	for _, w := range wordList {
-		if w == beginWord {
-			continue
-		}
-		wl[w] = true
+		wordsMap[w] = true
 	}
 
-	stack := []string{beginWord}
-	count := 1
-	for len(stack) > 0 {
-		count++
-
-		totalNext := []string{}
-
-		for _, cw := range stack {
-			next, found := executeBFS(cw, endWord, wl)
-
-			if found {
-				return count
-			}
-
-			totalNext = append(totalNext, next...)
-		}
-
-		stack = totalNext
+	for !found && len(fromWords) > 0 {
+		fromWords, found = findNextBfsLayer(fromWords, wordsMap, endWord)
+		counter++
 	}
 
+	if found {
+		return counter
+	}
 	return 0
 }
 
-func executeBFS(word, endWord string, wl map[string]bool) ([]string, bool) {
-	next := getNearest(word, wl)
+func findNextBfsLayer(fromWords []string, words map[string]bool, targetWord string) ([]string, bool) {
+	nextLayer := []string{}
+	if len(words) == 0 {
+		return nextLayer, false
+	}
+	for _, word := range fromWords {
+		nextWords, found := findSingleLetterDifferentWords(word, words, targetWord)
 
-	for _, w := range next {
-		if w == endWord {
-			return next, true
+		if found {
+			return nil, true
+		}
+
+		if len(nextWords) == 0 {
+			continue
+		}
+
+		nextLayer = append(nextLayer, nextWords...)
+		if len(words) == 0 {
+			break
 		}
 	}
 
-	return next, false
+	return nextLayer, false
 }
 
-func getNearest(word string, wl map[string]bool) []string {
+func findSingleLetterDifferentWords(word string, words map[string]bool, endWord string) ([]string, bool) {
 	result := []string{}
+	dummy := []byte(word)
+outer:
+	for i, cw := range word {
+		for c := 'a'; c <= 'z'; c++ {
+			if c != cw {
+				dummy[i] = byte(c)
+				nw := string(dummy)
+				if words[nw] {
+					if nw == endWord {
+						return nil, true
+					}
+					delete(words, nw)
+					result = append(result, nw)
 
-	for w := range wl {
-		if isNear(word, w) {
-			result = append(result, w)
-			delete(wl, w)
-		}
-	}
-
-	return result
-}
-
-func isNear(word, target string) bool {
-	diff := 0
-	for i := 0; i < len(word); i++ {
-		if word[i:i+1] != target[i:i+1] {
-			diff++
-			if diff > 1 {
-				return false
+					if len(words) == 0 {
+						break outer
+					}
+				}
 			}
 		}
+		dummy[i] = byte(cw)
 	}
 
-	return diff == 1
+	return result, false
 }
