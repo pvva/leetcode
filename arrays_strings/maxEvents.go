@@ -49,13 +49,11 @@ func (eh eventsHeap) Swap(i, j int) {
 func (eh *eventsHeap) Push(x interface{}) {
 	item := x.([]int)
 	*eh = append(*eh, item)
-	heap.Fix(eh, len(*eh)-1)
 }
 
 func (eh *eventsHeap) Pop() interface{} {
-	item := (*eh)[0]
-	*eh = (*eh)[1:]
-	heap.Fix(eh, 0)
+	item := (*eh)[len(*eh)-1]
+	*eh = (*eh)[:len(*eh)-1]
 
 	return item
 }
@@ -77,7 +75,7 @@ func maxEvents(events [][]int) int {
 		}
 	}
 
-	hp := eventsHeap{}
+	hp := &eventsHeap{}
 
 	cnt := 0
 	eIdx := 0
@@ -87,7 +85,7 @@ func maxEvents(events [][]int) int {
 		}
 
 		for eIdx < len(events) && events[eIdx][0] == day {
-			hp.Push(events[eIdx])
+			heap.Push(hp, events[eIdx])
 			eIdx++
 		}
 
@@ -96,9 +94,9 @@ func maxEvents(events [][]int) int {
 			continue
 		}
 
-		event := hp.Pop().([]int)
+		event := heap.Pop(hp).([]int)
 		for event[1] < day && hp.Len() > 0 {
-			event = hp.Pop().([]int)
+			event = heap.Pop(hp).([]int)
 		}
 
 		if event[1] >= day {
