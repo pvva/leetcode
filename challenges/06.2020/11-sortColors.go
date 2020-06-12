@@ -66,32 +66,17 @@ func sortColorsOnePass(nums []int) {
 	zp := 0
 	tp := len(nums) - 1
 	cp := 0
-	for zp < len(nums) && nums[zp] == 0 {
-		zp++
-		cp++
-	}
-	for tp >= cp && nums[tp] == 2 {
-		tp--
-	}
 
 	for cp <= tp {
-		if nums[cp] == 2 {
-			nums[cp], nums[tp] = nums[tp], nums[cp]
-			for tp >= cp && nums[tp] == 2 {
-				tp--
-			}
-		}
 		if nums[cp] == 0 {
 			nums[cp], nums[zp] = nums[zp], nums[cp]
-			for zp < len(nums) && nums[zp] == 0 {
-				zp++
-			}
-		}
-		if cp < zp {
-			cp = zp
-		}
-		if nums[cp] == 1 {
+			zp++
 			cp++
+		} else if nums[cp] == 1 {
+			cp++
+		} else if nums[cp] == 2 {
+			nums[cp], nums[tp] = nums[tp], nums[cp]
+			tp--
 		}
 	}
 }
