@@ -1,0 +1,34 @@
+Week 1
+June 1 - Invert Binary Tree, problem #226
+June 2 - Delete Node in a Linked List, problem #237
+June 3 - Two City Scheduling, problem #1029
+June 4 - Reverse String, problem #344
+June 5 - Random Pick with Weight, problem #528
+June 6 - Queue Reconstruction by Height, problem #406
+June 7 - Coin Change 2, problem #518
+
+Week 2
+June 8 - Power of Two, problem #231
+June 9 - Is Subsequence, problem #392
+June 10 - Search Insert Position, problem #35
+June 11 - Sort Colors, problem #75
+June 12 - Insert Delete GetRandom O(1), problem #380
+June 13 - Largest Divisible Subset, problem #368
+June 14 - Cheapest Flights Within K Stops, problem #787
+
+Week 3
+June 15 - Search in a Binary Search Tree, problem #700
+June 16 - Validate IP Address, problem #468
+June 17 - Surrounded Regions, problem #130
+June 18 - H-Index II, problem #275
+June 19 - Longest Duplicate Substring, problem #1044
+June 20 - Permutation Sequence, problem #60
+June 21 - Dungeon Game, problem #174
+
+Week 4
+June 22 - Single Number II, problem #137
+June 23 - Count Complete Tree Nodes, problem #222
+June 24 - Unique Binary Search Trees, problem #96
+June 25 - Find the Duplicate Number, problem #287
+June 26 - Sum Root to Leaf Numbers, problem #129
+June 27 - Perfect Squares, problem #279

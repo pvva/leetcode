@@ -1,1 +1,3 @@
-This repository contains some [leetcode](https://leetcode.com/explore/interview/card/top-interview-questions-hard) solutions.
+This repository contains some [leetcode](https://leetcode.com/problemset/all/) solutions.
+It also contains some other algorithmic solutions.
+ 
