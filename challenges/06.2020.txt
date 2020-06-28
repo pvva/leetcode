@@ -32,3 +32,5 @@ June 24 - Unique Binary Search Trees, problem #96
 June 25 - Find the Duplicate Number, problem #287
 June 26 - Sum Root to Leaf Numbers, problem #129
 June 27 - Perfect Squares, problem #279
+June 28 - Reconstruct Itinerary, problem #332
+
