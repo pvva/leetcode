@@ -34,3 +34,6 @@ June 26 - Sum Root to Leaf Numbers, problem #129
 June 27 - Perfect Squares, problem #279
 June 28 - Reconstruct Itinerary, problem #332
 
+Week 5
+June 29 - Unique Paths, problem #62
+June 30 - Word Search II, problem #212
