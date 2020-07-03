@@ -1,2 +1,4 @@
 Week 1
 July 1 - Arranging Coins, problem #441
+July 2 - Binary Tree Level Order Traversal II, problem #107
+July 3 - Prison Cells After N Days, problem #957

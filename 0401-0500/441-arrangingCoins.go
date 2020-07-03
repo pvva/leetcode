@@ -3,7 +3,8 @@ package main
 import "math"
 
 func main() {
-
+	println(arrangeCoins(5), 2)
+	println(arrangeCoins(8), 3)
 }
 
 /*
