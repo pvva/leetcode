@@ -6,3 +6,7 @@ July 4 - Ugly Number II, problem #264
 July 5 - Hamming Distance, problem #461
 July 6 - Plus One, problem #66
 July 7 - Island Perimeter, problem #463
+
+Week 2
+July 8 - 3Sum, problem #15
+July 8 - Maximum Width of Binary Tree, problem #662
