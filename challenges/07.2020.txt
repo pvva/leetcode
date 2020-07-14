@@ -14,3 +14,4 @@ July 10 - Flatten a Multilevel Doubly Linked List, problem #430
 July 11 - Subsets, problem #78
 July 12 - Reverse Bits, problem #190
 July 13 - Same Tree, problem #100
+July 14 - Angle Between Hands of a Clock, problem #1344

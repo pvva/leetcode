@@ -65,7 +65,7 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
 	if p == nil && q == nil {
 		return true
 	}
-	if (p == nil && q != nil) || (p != nil && q == nil) || p.Val != q.Val {
+	if (p == nil || q == nil) || p.Val != q.Val {
 		return false
 	}
 
