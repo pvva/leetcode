@@ -56,3 +56,27 @@ func myPow(x float64, n int) float64 {
 
 	return r
 }
+
+func myPowIterative(x float64, n int) float64 {
+	r := 1.0
+
+	neg := false
+	if n < 0 {
+		neg = true
+		n = -n
+	}
+
+	for n > 0 {
+		if n&1 == 1 {
+			r *= x
+		}
+		x *= x
+		n >>= 1
+	}
+
+	if neg {
+		return 1 / r
+	}
+
+	return r
+}
