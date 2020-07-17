@@ -18,4 +18,5 @@ July 14 - Angle Between Hands of a Clock, problem #1344
 
 Week 3
 July 15 - Reverse Words in a String, problem #151
-July 16 - Reverse Words in a String, problem #50
+July 16 - Pow (x, n), problem #50
+July 17 - Top K Frequent Elements, problem #347
