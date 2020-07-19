@@ -20,3 +20,5 @@ Week 3
 July 15 - Reverse Words in a String, problem #151
 July 16 - Pow (x, n), problem #50
 July 17 - Top K Frequent Elements, problem #347
+July 18 - Course Schedule II, problem #210
+July 19 - Add Binary, problem #67
