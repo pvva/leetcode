@@ -50,7 +50,7 @@ func addBinary(a string, b string) string {
 		v := (*t)[l] - '0'
 		l--
 		r := rv + v + c
-		c = (r & 2) >> 1
+		c = r >> 1
 		res[i] = r&1 + '0'
 	}
 
