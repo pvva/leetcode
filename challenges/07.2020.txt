@@ -28,3 +28,4 @@ July 21 - Word Search, problem #79
 Week 4
 July 22 - Binary Tree Zigzag Level Order Traversal, problem #103
 July 23 - Single Number III, problem #260
+July 24 - All Paths From Source to Target, problem #797
