@@ -31,3 +31,4 @@ July 23 - Single Number III, problem #260
 July 24 - All Paths From Source to Target, problem #797
 July 25 - Find Minimum in Rotated Sorted Array II, problem #154
 July 26 - Add Digits, problem #258
+July 27 - Construct Binary Tree from Inorder and Postorder Traversal, problem #106
