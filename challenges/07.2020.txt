@@ -33,3 +33,7 @@ July 25 - Find Minimum in Rotated Sorted Array II, problem #154
 July 26 - Add Digits, problem #258
 July 27 - Construct Binary Tree from Inorder and Postorder Traversal, problem #106
 July 28 - Task Scheduler, problem #621
+
+Week 5
+July 29 - Best Time to Buy and Sell Stock with Cooldown, problem #309
+July 30 - Word Break II, problem #140
