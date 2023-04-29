@@ -92,7 +92,6 @@ The number of nodes in the list is in the range sz.
 0 <= Node.val <= 1000
 1 <= k <= sz
 
-
 Follow-up: Can you solve the problem in O(1) extra memory space?
 */
 

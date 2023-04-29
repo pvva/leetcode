@@ -56,15 +56,7 @@ func threeSumClosest(nums []int, target int) int {
 			sum := nums[i] + nums[secondIdx] + nums[thirdIdx]
 			d := sum - target
 			if d == 0 {
-				secondIdx++
-				thirdIdx--
-
-				for secondIdx < thirdIdx && nums[secondIdx-1] == nums[secondIdx] {
-					secondIdx++
-				}
-				for secondIdx < thirdIdx && nums[thirdIdx+1] == nums[thirdIdx] {
-					thirdIdx--
-				}
+				return sum
 			} else if d < 0 {
 				secondIdx++
 			} else {

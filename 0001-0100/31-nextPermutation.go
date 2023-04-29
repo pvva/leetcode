@@ -26,11 +26,10 @@ Here are some examples. Inputs are in the left-hand column and its corresponding
 
 // lexicographically ordered means increasing sequence, so the idea comes out of this fact
 // starting from the right we are tracing increasing sequence, until we find a fall
-// if fall is not found - just reverse the array and it will be sorted in ascending order
+// if fall is not found - just reverse the array, and it will be sorted in ascending order
 // if fall is found, then we don't care about left part, because we will get correct order in the right part, which
-//   will give us next greater permutation
-// at first reverse the right part, so that when we are looking from the left, it's increasing
-// then find the number which is larger then the fall and swap them, this way the condition is met
+// will give us next greater permutation at first reverse the right part, so that when we are looking from the left,
+// it's increasing then find the number which is larger than the fall and swap them, this way the condition is met.
 func nextPermutation(nums []int) {
 	idx := -1
 	for i := len(nums) - 2; i >= 0; i-- {
